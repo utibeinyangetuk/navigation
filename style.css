@@ -13,11 +13,11 @@ nav {
 	justify-content: space-around;
 	align-items: center;
 	min-height: 8vh;
-	background-color: #fafafa;
+	background-color: teal;
 }
 
 .logo {
-	color: teal;
+	color: #fff;
 	font-size: 22px;
 	text-transform: uppercase;
 	letter-spacing: 5px;
@@ -28,8 +28,54 @@ nav {
 	width: 450px;
 }
 .nav-links a {
-	color: teal;
+	color: #fff;
 	letter-spacing: 3px;
 	font-weight: bold;
 	text-transform: capitalize;
+}
+.burger {
+	display: none;
+}
+.burger div {
+	width: 25px;
+	height: 3px;
+	background-color: #fff;
+	margin: 5px;
+}
+
+@media screen and (max-width: 1024px) {
+	.nav-links {
+		width: 60%;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	body {
+		background-color: rgba(0, 128, 128, 0.21);
+		overflow-x: hidden;
+	}
+	.nav-links {
+		position: absolute;
+		right: 0;
+		height: 92vh;
+		top: 8vh;
+		background-color: teal;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 50%;
+		transform: translateX(100%);
+		transition: transform 0.5s ease-in-out;
+	}
+	.nav-links li {
+		opacity: 0;
+	}
+	.burger {
+		display: block;
+		cursor: pointer;
+	}
+}
+
+.nav-active {
+	transform: translateX(0);
 }
