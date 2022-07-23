@@ -4,18 +4,19 @@ const navslide = () => {
 	const navlinks = document.querySelectorAll('.nav-links li')
 
 	burger.addEventListener('click', () => {
-		//Toggle navigation
+		//Toggle the navigation
 		nav.classList.toggle('nav-active')
 
-		//animate links
+		//animating the links
 		navlinks.forEach((link, index) => {
 			if (link.style.animation) {
+				// reset animation to 0
 				link.style.animation = ''
 			} else {
 				link.style.animation = `navLinkFade 0.5s ease forwards ${index / 5 + 0.5}s`
 			}
 		})
-		//burger animation
+		//toggle the x
 		burger.classList.toggle('cross')
 	})
 }
